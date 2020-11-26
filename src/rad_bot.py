@@ -4,7 +4,8 @@ import json
 import discord
 from static_config_parser import StaticConfigParser
 from random import randrange
-from random import randint
+from random import choice
+
 
 """Easy to use Discord bot.
 
@@ -20,7 +21,6 @@ RHYME_API_URL = 'https://api.datamuse.com/words?rel_rhy='
 CONFIG = StaticConfigParser()
 PREFIX = CONFIG.get('SERVER', 'Prefix')
 IMAGE_PATH =  'images/'
-IMAGE_COUNT = len(os.listdir(IMAGE_PATH))
 
 BROWSER = mechanicalsoup.Browser()
 
@@ -60,12 +60,12 @@ async def on_message(message):
         await message.channel.send("https://github.com/aminbeigi/Rad-Bot")  
 
     if message.content.lower() == (PREFIX + "rad meme"):
-        random_num = randrange(IMAGE_COUNT)
+        image_lst = os.listdir(IMAGE_PATH)
         # try to find .png and .jpg file
         try:
-            await message.channel.send(file=discord.File(f'{IMAGE_PATH}image{random_num}.png'))
+            await message.channel.send(file=discord.File(IMAGE_PATH + choice(image_lst)))
         except (OSError, IOError):
-            await message.channel.send(file=discord.File(f'{IMAGE_PATH}image{random_num}.jpg'))
+            await message.channel.send(file=discord.File(IMAGE_PATH + choice(image_lst)))
 
     if message.content.lower() == (PREFIX + "sound like radovan"):
         await message.channel.send(get_random_word(SOUND_LIKE_API_URL, 'radovan'))
