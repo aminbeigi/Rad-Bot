@@ -5,7 +5,12 @@
 <p align="center">A Discord bot.</p>
 <h2></h2>
 </p>
+
 <br />
+<p align="center">
+<a href="../../issues"><img src="https://img.shields.io/github/issues/aminbeigi/Rad-Bot.svg?style=flat-square" /></a>
+<a href="../../pulls"><img src="https://img.shields.io/github/issues-pr/aminbeigi/Rad-Bot.svg?style=flat-square" /></a> 
+</p>
 
 ## Description
 Rad-Bot is a multi-purpose discord bot for our community server discord server.  
