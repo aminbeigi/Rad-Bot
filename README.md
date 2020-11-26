@@ -18,7 +18,7 @@ Rad-bot interacts with APIs to fetch relevant and also post images from inside a
 
 ## Requirements
 * Python 3.6+
-* discord.py 1.3.4
+* discord.py 1.3.4+
 
 ## Commands
 In the following list the default prefix `!` is used, but it can changed in the config.ini file.
