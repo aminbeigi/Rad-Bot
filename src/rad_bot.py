@@ -46,21 +46,28 @@ async def on_message(message):
         return 
 
     if message.content.lower().startswith(PREFIX + "version"):
-        await message.channel.send("1.3.1")  
+        await message.channel.send("1.8.4")  
 
     if message.content.lower().startswith(PREFIX + "help"):
         await message.channel.send(" Rad Bot currently supports the following commands:\n" \
-                                    "!version, !word like radovan/rado/rad, !radovan/rado/rad rhyme, !rad meme")
+                                    "!help  !version  !source code\n" \
+                                    "!sound like radovan  !sound like rado  !sound like rad\n" \
+                                    "!radovan rhyme  !rado rhyme  !rad rhyme\n" \
+                                    "!rad meme"
+                                    )
+
+    if message.content.lower().startswith(PREFIX + "source code"):
+        await message.channel.send("https://github.com/aminbeigi/Rad-Bot")  
 
     if message.content.lower() == (PREFIX + "rad meme"):
         random_num = randrange(IMAGE_COUNT)
         await message.channel.send(file=discord.File(f'{IMAGE_PATH}image{random_num}.png'))
 
-    if message.content.lower() == (PREFIX + "word like radovan"):
+    if message.content.lower() == (PREFIX + "sound like radovan"):
         await message.channel.send(get_random_word(SOUND_LIKE_API_URL, 'radovan'))
-    if message.content.lower() == (PREFIX + "word like rado"):
+    if message.content.lower() == (PREFIX + "sound like rado"):
         await message.channel.send(get_random_word(SOUND_LIKE_API_URL, 'rado'))
-    if message.content.lower() == (PREFIX + "word like rad"):
+    if message.content.lower() == (PREFIX + "sound like rad"):
 
         await message.channel.send(get_random_word(SOUND_LIKE_API_URL, 'rad'))
     if message.content.lower() == (PREFIX + "radovan rhyme"):
