@@ -133,3 +133,6 @@ config/config.ini
 
 # local images
 images/*
+
+# Visual Studio Code
+src/tempCodeRunnerFile.py
