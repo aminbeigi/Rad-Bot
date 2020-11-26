@@ -18,18 +18,24 @@ Rad-bot interacts with APIs to fetch relevant and also post images from inside a
 
 ## Requirements
 * Python 3.6+
-* discord.py 1.3.4
+* discord.py 1.3.4+
 
 ## Commands
 In the following list the default prefix `!` is used, but it can changed in the config.ini file.
 * `!help`
 * `!version`
+* `!source code`
 * `!rad meme`
-* `!word like radovan/rado/rad`
-* `!radovan/rado/rad rhyme`
+* `!sound like radovan`
+* `!sound like rado`
+* `!sound like rad`
+* `!radovan rhyme`
+* `!rado rhyme`
+* `!rad rhyme`
 
 ## Acknowledgements
 API: https://www.datamuse.com/api/
+
 ## Contributions
 Contributions are always welcome!  
 Just make a [pull request](../../pulls).
