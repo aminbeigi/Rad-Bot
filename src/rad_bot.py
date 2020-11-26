@@ -54,21 +54,20 @@ async def on_message(message):
         await message.channel.send(" Rad Bot currently supports the following commands:\n" \
                                     "!version, !word like radovan/rado/rad, !radovan/rado/rad rhyme")
 
+    if message.content == (PREFIX + "rad meme"):
+        await message.channel.send(file=discord.File('images/image2.png'))
+
     if message.content == (PREFIX + "word like radovan"):
         await message.channel.send(get_random_word(SOUND_LIKE_API_URL, 'radovan'))
-
     if message.content == (PREFIX + "word like rado"):
         await message.channel.send(get_random_word(SOUND_LIKE_API_URL, 'rado'))
-
     if message.content == (PREFIX + "word like rad"):
-        await message.channel.send(get_random_word(SOUND_LIKE_API_URL, 'rad'))
 
+        await message.channel.send(get_random_word(SOUND_LIKE_API_URL, 'rad'))
     if message.content == (PREFIX + "radovan rhyme"):
         await message.channel.send(get_random_word(RHYME_API_URL, 'radovan'))
-
     if message.content == (PREFIX + "rado rhyme"):
         await message.channel.send(get_random_word(RHYME_API_URL, 'rado'))
-
     if message.content == (PREFIX + "rad rhyme"):
         await message.channel.send(get_random_word(RHYME_API_URL, 'rad'))
     
