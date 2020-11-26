@@ -1,3 +1,4 @@
+import os
 import mechanicalsoup
 import json
 import discord
@@ -17,10 +18,13 @@ Requires a token input in config.ini.
 SOUND_LIKE_API_URL = 'https://api.datamuse.com/words?sl='
 RHYME_API_URL = 'https://api.datamuse.com/words?rel_rhy='
 
-config = StaticConfigParser()
+CONFIG = StaticConfigParser()
+PREFIX = CONFIG.get('SERVER', 'Prefix')
+IMAGE_PATH =  'images/'
+IMAGE_COUNT = len(os.listdir(IMAGE_PATH))
 
-PREFIX = config.get('SERVER', 'Prefix')
 BROWSER = mechanicalsoup.Browser()
+
 
 client = discord.Client()
 
@@ -51,6 +55,7 @@ async def on_message(message):
                                     "!version, !word like radovan/rado/rad, !radovan/rado/rad rhyme, !rad meme")
 
     if message.content.lower() == (PREFIX + "rad meme"):
+
         await message.channel.send(file=discord.File('images/image2.png'))
 
     if message.content.lower() == (PREFIX + "word like radovan"):
@@ -68,7 +73,7 @@ async def on_message(message):
         await message.channel.send(get_random_word(RHYME_API_URL, 'rad'))
     
 def main():
-    client.run(config.get('SERVER', 'Token'))
+    client.run(CONFIG.get('SERVER', 'Token'))
     on_ready()
 
 if __name__ == '__main__':
