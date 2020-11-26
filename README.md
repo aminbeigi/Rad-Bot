@@ -8,7 +8,8 @@
 <br />
 
 ## Description
-Discord bot written in Python.
+Rad-Bot is a multi-purpose discord bot for our community server discord server.  
+Rad-bot interacts with APIs to fetch relevant and also post images from inside a directory.
 
 ## Requirements
 * Python 3.6+
@@ -16,8 +17,14 @@ Discord bot written in Python.
 
 ## Commands
 In the following list the default prefix `!` is used, but it can changed in the config.ini file.
-* `! {word}`
+* `!help`
+* `!version`
+* `!rad meme`
+* `!word like radovan/rado/rad`
+* `!radovan/rado/rad rhyme`
 
+## Acknowledgements
+API: https://www.datamuse.com/api/
 ## Contributions
 Contributions are always welcome!  
 Just make a [pull request](../../pulls).
