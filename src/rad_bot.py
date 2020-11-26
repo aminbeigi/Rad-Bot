@@ -13,7 +13,7 @@ Requires a token input in config.ini.
 """
 
 # globals
-SOUND_LIKE_API_URL = 'https://api.datamuse.com/words?sp='
+SOUND_LIKE_API_URL = 'https://api.datamuse.com/words?sl='
 RHYME_API_URL = 'https://api.datamuse.com/words?rel_rhy='
 
 
@@ -34,8 +34,6 @@ def get_random_word(api_url, plain_text):
     response = browser.get(url)
     data = json.loads(response.text)
     random_num = randrange(len(data))
-    print(random_num)
-    print(len(data))
     random_word = data[random_num]['word']
     return random_word
 
@@ -53,9 +51,8 @@ async def on_message(message):
         await message.channel.send("1.2.1")  
 
     if message.content.startswith(PREFIX + "help"):
-        await message.channel.send("""Currently Rad-Bot supports the following commands: 
-        !version, !word like radovan/rado/rad, !radovan 
-        """)
+        await message.channel.send(" Rad Bot currently supports the following commands:\n" \
+                                    "!version, !word like radovan/rado/rad, !radovan/rado/rad rhyme")
 
     if message.content == (PREFIX + "word like radovan"):
         await message.channel.send(get_random_word(SOUND_LIKE_API_URL, 'radovan'))
