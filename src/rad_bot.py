@@ -5,12 +5,11 @@ import discord
 from static_config_parser import StaticConfigParser
 from random import randrange
 from random import randint
-from random import choice
 
 """Easy to use Discord bot.
 
-Rad-Bot posts images from inside a directory and interacts 
-with APIs to output relevant data.
+Rad-Bot posts images from inside a directory and interacts with APIs
+to output relevant data.
 Requires a token input in config.ini.
 """
 
@@ -24,7 +23,6 @@ IMAGE_PATH =  'images/'
 IMAGE_COUNT = len(os.listdir(IMAGE_PATH))
 
 BROWSER = mechanicalsoup.Browser()
-
 
 client = discord.Client()
 
@@ -55,8 +53,8 @@ async def on_message(message):
                                     "!version, !word like radovan/rado/rad, !radovan/rado/rad rhyme, !rad meme")
 
     if message.content.lower() == (PREFIX + "rad meme"):
-
-        await message.channel.send(file=discord.File('images/image2.png'))
+        random_num = randrange(IMAGE_COUNT)
+        await message.channel.send(file=discord.File(f'{IMAGE_PATH}image{random_num}.png'))
 
     if message.content.lower() == (PREFIX + "word like radovan"):
         await message.channel.send(get_random_word(SOUND_LIKE_API_URL, 'radovan'))
