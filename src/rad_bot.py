@@ -61,7 +61,11 @@ async def on_message(message):
 
     if message.content.lower() == (PREFIX + "rad meme"):
         random_num = randrange(IMAGE_COUNT)
-        await message.channel.send(file=discord.File(f'{IMAGE_PATH}image{random_num}.png'))
+        # try to find .png and .jpg file
+        try:
+            await message.channel.send(file=discord.File(f'{IMAGE_PATH}image{random_num}.png'))
+        except (OSError, IOError):
+            await message.channel.send(file=discord.File(f'{IMAGE_PATH}image{random_num}.jpg'))
 
     if message.content.lower() == (PREFIX + "sound like radovan"):
         await message.channel.send(get_random_word(SOUND_LIKE_API_URL, 'radovan'))
