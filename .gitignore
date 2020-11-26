@@ -130,3 +130,6 @@ dmypy.json
 
 # configuration file
 config/config.ini
+
+# local images
+images/*
