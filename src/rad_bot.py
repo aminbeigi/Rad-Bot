@@ -31,7 +31,7 @@ async def on_message(message):
     if message.author == client.user:
         return 
 
-    if message.content.startswith(PREFIX + "words like radovan"):
+    if message.content.startswith(PREFIX + "word like radovan"):
         url = API_URL + 'radovan'
         browser = mechanicalsoup.Browser()
         response = browser.get(url)
