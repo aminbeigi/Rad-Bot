@@ -68,8 +68,8 @@ async def on_message(message):
     if message.content.lower() == (PREFIX + "sound like rado"):
         await message.channel.send(get_random_word(SOUND_LIKE_API_URL, 'rado'))
     if message.content.lower() == (PREFIX + "sound like rad"):
-
         await message.channel.send(get_random_word(SOUND_LIKE_API_URL, 'rad'))
+        
     if message.content.lower() == (PREFIX + "radovan rhyme"):
         await message.channel.send(get_random_word(RHYME_API_URL, 'radovan'))
     if message.content.lower() == (PREFIX + "rado rhyme"):
