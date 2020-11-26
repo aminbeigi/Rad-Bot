@@ -8,7 +8,8 @@ from random import choice
 
 """Easy to use Discord bot.
 
-A Discord bot that takes ...
+Rad-Bot posts images from inside a directory and interacts 
+with APIs to output relevant data.
 Requires a token input in config.ini.
 """
 
