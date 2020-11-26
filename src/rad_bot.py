@@ -64,8 +64,8 @@ async def on_message(message):
         # try to find .png and .jpg file
         try:
             await message.channel.send(file=discord.File(IMAGE_PATH + choice(image_lst)))
-        except (OSError, IOError):
-            await message.channel.send(file=discord.File(IMAGE_PATH + choice(image_lst)))
+        except (OSError, IOError) as e:
+            raise Exception("Couldn't find any files in directory.") from e
 
     if message.content.lower() == (PREFIX + "sound like radovan"):
         await message.channel.send(get_random_word(SOUND_LIKE_API_URL, 'radovan'))
