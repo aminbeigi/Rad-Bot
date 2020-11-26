@@ -12,6 +12,7 @@ Discord bot written in Python.
 
 ## Requirements
 * Python 3.6+
+* discord.py 1.3.4
 
 ## Commands
 In the following list the default prefix `!` is used, but it can changed in the config.ini file.
