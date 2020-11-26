@@ -14,6 +14,7 @@ Requires a token input in config.ini.
 
 # globals
 SOUND_LIKE_API_URL = 'https://api.datamuse.com/words?sp='
+RHYME_API_URL = 'https://api.datamuse.com/words?rel_rhy='
 
 
 CONFIG_FILE_PATH = 'config/config.ini'
@@ -33,6 +34,8 @@ def get_random_word(api_url, plain_text):
     response = browser.get(url)
     data = json.loads(response.text)
     random_num = randrange(len(data))
+    print(random_num)
+    print(len(data))
     random_word = data[random_num]['word']
     return random_word
 
@@ -46,17 +49,32 @@ async def on_message(message):
     if message.author == client.user:
         return 
 
-    if message.content.startswith(PREFIX + "word like radovan"):
-        await message.channel.send(get_random_word(SOUND_LIKE_API_URL, 'radovan'))
-    
+    if message.content.startswith(PREFIX + "version"):
+        await message.channel.send("1.2.1")  
+
     if message.content.startswith(PREFIX + "help"):
         await message.channel.send("""Currently Rad-Bot supports the following commands: 
-        !version, !word like radovan
+        !version, !word like radovan/rado/rad, !radovan 
         """)
 
-    if message.content.startswith(PREFIX + "version"):
-        await message.channel.send("1.2.1")        
-  
+    if message.content == (PREFIX + "word like radovan"):
+        await message.channel.send(get_random_word(SOUND_LIKE_API_URL, 'radovan'))
+
+    if message.content == (PREFIX + "word like rado"):
+        await message.channel.send(get_random_word(SOUND_LIKE_API_URL, 'rado'))
+
+    if message.content == (PREFIX + "word like rad"):
+        await message.channel.send(get_random_word(SOUND_LIKE_API_URL, 'rad'))
+
+    if message.content == (PREFIX + "radovan rhyme"):
+        await message.channel.send(get_random_word(RHYME_API_URL, 'radovan'))
+
+    if message.content == (PREFIX + "rado rhyme"):
+        await message.channel.send(get_random_word(RHYME_API_URL, 'rado'))
+
+    if message.content == (PREFIX + "rad rhyme"):
+        await message.channel.send(get_random_word(RHYME_API_URL, 'rad'))
+    
 def main():
     client.run(config.get('SERVER', 'Token'))
     on_ready()
