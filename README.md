@@ -5,10 +5,16 @@
 <p align="center">A Discord bot.</p>
 <h2></h2>
 </p>
+
 <br />
+<p align="center">
+<a href="../../issues"><img src="https://img.shields.io/github/issues/aminbeigi/Rad-Bot.svg?style=flat-square" /></a>
+<a href="../../pulls"><img src="https://img.shields.io/github/issues-pr/aminbeigi/Rad-Bot.svg?style=flat-square" /></a> 
+</p>
 
 ## Description
-Discord bot written in Python.
+Rad-Bot is a multi-purpose discord bot for our community server discord server.  
+Rad-bot interacts with APIs to fetch relevant and also post images from inside a directory.
 
 ## Requirements
 * Python 3.6+
@@ -16,8 +22,14 @@ Discord bot written in Python.
 
 ## Commands
 In the following list the default prefix `!` is used, but it can changed in the config.ini file.
-* `! {word}`
+* `!help`
+* `!version`
+* `!rad meme`
+* `!word like radovan/rado/rad`
+* `!radovan/rado/rad rhyme`
 
+## Acknowledgements
+API: https://www.datamuse.com/api/
 ## Contributions
 Contributions are always welcome!  
 Just make a [pull request](../../pulls).
