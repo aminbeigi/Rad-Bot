@@ -1,6 +1,6 @@
 import configparser
 
-"""A static config parser that is used by the rad_bot.py"""
+"""A static config parser that is used by rad_bot.py"""
 
 class StaticConfigParser():
     config_file_path = 'config/config.ini'
