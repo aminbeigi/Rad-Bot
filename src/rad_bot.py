@@ -57,7 +57,7 @@ async def on_message(message):
 
     if message.content.lower().startswith(PREFIX + "help"):
         await message.channel.send(" Rad Bot currently supports the following commands:\n" \
-                                    "!help\t!version\t!source code\t!whats new?\n" \
+                                    "!help\t!version\t!source code\t!whats new\n" \
                                     "!sound like radovan\t!sound like rado\t!sound like rad\n" \
                                     "!rhyme with radovan\t!rhyme with rado\t!rhyme with rad\n" \
                                     "!rad meme"
@@ -71,6 +71,9 @@ async def on_message(message):
 
     if message.content.lower() == (PREFIX + "whats new"):
         await message.channel.send("Rad Bot can now send out Rad words at lightling speeds!") 
+
+    if message.content.lower() == (PREFIX + "how many rad meme"):
+        await message.channel.send(len(os.listdir(IMAGE_PATH))) 
 
     if message.content.lower() == (PREFIX + "rad meme"):
         image_lst = os.listdir(IMAGE_PATH)
