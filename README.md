@@ -14,7 +14,7 @@
 
 ## Description
 Rad-Bot is a multi-purpose discord bot for our community server discord server.  
-Rad-bot interacts with APIs to fetch relevant and also post images from inside a directory.
+Rad-bot interacts with APIs to fetch data and also post images from a directory.
 
 ## Requirements
 * Python 3.8.2+
@@ -25,13 +25,15 @@ In the following list the default prefix `!` is used, but it can changed in the 
 * `!help`
 * `!version`
 * `!source code`
+* `!whats new?`
 * `!rad meme`
+* `!how many rad memes?`
 * `!sound like radovan`
 * `!sound like rado`
 * `!sound like rad`
-* `!radovan rhyme`
-* `!rado rhyme`
-* `!rad rhyme`
+* `!rhyme with radovan`
+* `!rhyme with rado`
+* `!rhyme with rad`
 
 ## Acknowledgements
 API: https://www.datamuse.com/api/
