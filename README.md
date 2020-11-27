@@ -17,7 +17,7 @@ Rad-Bot is a multi-purpose discord bot for our community server discord server.
 Rad-bot interacts with APIs to fetch relevant and also post images from inside a directory.
 
 ## Requirements
-* Python 3.6+
+* Python 3.8.2+
 * discord.py 1.3.4+
 
 ## Commands
