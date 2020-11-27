@@ -57,23 +57,24 @@ async def on_message(message):
 
     if message.content.lower().startswith(PREFIX + "help"):
         await message.channel.send(" Rad Bot currently supports the following commands:\n" \
-                                    "!help\t!version\t!source code\t!whats new\n" \
+                                    "!help\t!version\t!source code\t!whats new?\n" \
                                     "!sound like radovan\t!sound like rado\t!sound like rad\n" \
                                     "!rhyme with radovan\t!rhyme with rado\t!rhyme with rad\n" \
-                                    "!rad meme"
+                                    "!rad meme\t!how many rad memes?"
                                     )
 
     if message.content.lower() == (PREFIX + "version"):
         await message.channel.send("1.11.2")  
 
-    if message.content.lower() == (PREFIX + "source code"):
+    if message.content.lower().startswith(PREFIX + "source"):
         await message.channel.send("https://github.com/aminbeigi/Rad-Bot") 
 
-    if message.content.lower() == (PREFIX + "whats new"):
-        await message.channel.send("Rad Bot can now send out Rad words at lightling speeds!") 
+    if message.content.lower().startswith(PREFIX + "whats new"):
+        await message.channel.send("Rad Bot can now send out Rad words at lightning speeds!") 
 
-    if message.content.lower() == (PREFIX + "how many rad meme"):
-        await message.channel.send(len(os.listdir(IMAGE_PATH))) 
+    if message.content.lower().startswith(PREFIX + "how many"):
+        total_images = len(os.listdir(IMAGE_PATH))
+        await message.channel.send(f"Rad Bot currenlty holds {total_images} rad memes!")
 
     if message.content.lower() == (PREFIX + "rad meme"):
         image_lst = os.listdir(IMAGE_PATH)
