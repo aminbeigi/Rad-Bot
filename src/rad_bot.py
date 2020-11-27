@@ -57,21 +57,24 @@ async def on_message(message):
 
     if message.content.lower().startswith(PREFIX + "help"):
         await message.channel.send(" Rad Bot currently supports the following commands:\n" \
-                                    "!help\t!version\t!source code\n" \
-                                    "!sound\tlike radovan\t!sound like rado\t!sound like rad\n" \
+                                    "!help\t!version\t!source code\t!whats new?\n" \
+                                    "!sound like radovan\t!sound like rado\t!sound like rad\n" \
                                     "!rhyme with radovan\t!rhyme with rado\t!rhyme with rad\n" \
                                     "!rad meme"
                                     )
 
-    if message.content.lower().startswith(PREFIX + "version"):
+    if message.content.lower() == (PREFIX + "version"):
         await message.channel.send("1.11.2")  
 
-    if message.content.lower().startswith(PREFIX + "source code"):
+    if message.content.lower() == (PREFIX + "source code"):
         await message.channel.send("https://github.com/aminbeigi/Rad-Bot") 
+
+    if message.content.lower() == (PREFIX + "whats new"):
+        await message.channel.send("Rad Bot can now send out Rad words at lightling speeds!") 
 
     if message.content.lower() == (PREFIX + "rad meme"):
         image_lst = os.listdir(IMAGE_PATH)
-        # try to find .png and .jpg file
+        # raise exception if empty directory OR invalid file format
         try:
             await message.channel.send(file=discord.File(IMAGE_PATH + choice(image_lst)))
         except (OSError, IOError) as e:
