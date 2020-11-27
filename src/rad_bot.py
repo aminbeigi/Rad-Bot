@@ -97,6 +97,9 @@ async def on_message(message):
         await message.channel.send(get_random_word(RHYME_WITH_RADO_DATA))
     if message.content.lower() == (PREFIX + "rhyme with rad"):
         await message.channel.send(get_random_word(RHYME_WITH_RAD_DATA))
+    
+    if 'golf' in message.content.lower():
+        await message.channel.send(":man_golfing: did someone say golf? :man_golfing:")
 
 # entry to program
 def main():
