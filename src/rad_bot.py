@@ -57,21 +57,20 @@ async def on_message(message):
         return 
 
     if message.content.lower().startswith(PREFIX + "help"):
-        await message.channel.send(" Rad Bot currently supports the following commands:\n" \
-                                    "!help\t!version\t!source code\t!whats new?\n" \
-                                    "!sound like radovan\t!sound like rado\t!sound like rad\n" \
-                                    "!rhyme with radovan\t!rhyme with rado\t!rhyme with rad\n" \
+        await message.channel.send("!help\t!version\t!source code\t!whats new?\n" \
+                                    "!sound like radovan/rado/rad\n" \
+                                    "!rhyme with radovan/rado/rad\n" \
                                     "!rad meme\t!how many rad memes?"
                                     )
 
     if message.content.lower() == (PREFIX + "version"):
-        await message.channel.send("1.11.2")  
+        await message.channel.send("2.0.1")  
 
     if message.content.lower().startswith(PREFIX + "source"):
         await message.channel.send("https://github.com/aminbeigi/Rad-Bot") 
 
     if message.content.lower().startswith(PREFIX + "whats new"):
-        await message.channel.send("Rad Bot can now send out Rad words at lightning speeds!") 
+        await message.channel.send("You can now private message Rad Bot rad memes!") 
 
     if message.content.lower().startswith(PREFIX + "how many"):
         total_images = len(os.listdir(IMAGE_PATH))
