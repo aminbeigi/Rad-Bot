@@ -2,7 +2,7 @@
 <img src="https://i.imgur.com/0yCFP1z.png" height="200px" width="200px"/>
 <br/>
 <h3 align="center">Rad Bot</h3>
-<p align="center">A Discord bot.</p>
+<p align="center">A multi-purpose Discord bot.</p>
 <h2></h2>
 </p>
 
@@ -13,8 +13,7 @@
 </p>
 
 ## Description
-Rad-Bot is a multi-purpose discord bot for our community server discord server.  
-Rad-bot interacts with APIs to fetch data and also post images from a directory.
+Rad-Bot is a Discord bot that offers many cool features for our community server discord server.
 
 ## Requirements
 * Python 3.8.2+
