@@ -2,6 +2,7 @@ import os
 import mechanicalsoup
 import json
 import discord
+from discord.ext import commands
 from static_config_parser import StaticConfigParser
 from random import randrange
 from random import choice
@@ -97,7 +98,19 @@ async def on_message(message):
         await message.channel.send(get_random_word(RHYME_WITH_RADO_DATA))
     if message.content.lower() == (PREFIX + "rhyme with rad"):
         await message.channel.send(get_random_word(RHYME_WITH_RAD_DATA))
+
+    # await client.process_commands(message)
+    if not message.guild:
+        try:
+            for attachment in message.attachments:
+                total_images = len(os.listdir(IMAGE_PATH))
+                await attachment.save(f'images/{total_images}_{attachment.filename}') # the file name attachment.filename
+            await message.author.send(f"Received imaged.\nRad Bot currenlty holds {total_images} rad memes!")
+        except (OSError, IOError) as e:
+            await message.author.send(f"Woah something went wrong... Please don't do that again :(.")
+            raise Exception("Coudln't process the file.") from e
     
+    # easter egg
     if 'golf' in message.content.lower():
         await message.channel.send(":man_golfing: did someone say golf? :man_golfing:")
 
