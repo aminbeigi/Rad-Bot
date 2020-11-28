@@ -13,7 +13,7 @@
 </p>
 
 ## Description
-Rad-Bot is a Discord bot that offers many cool features for our community server discord server.
+Rad-Bot is a Discord bot that offers many cool features for our community discord server.
 
 ## Requirements
 * Python 3.8.2+
