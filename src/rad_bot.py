@@ -49,6 +49,8 @@ RHYME_WITH_RADOVAN_DATA = fetch_data(SOUND_LIKE_API_URL, 'radovan')
 RHYME_WITH_RADO_DATA = fetch_data(SOUND_LIKE_API_URL, 'rado')
 RHYME_WITH_RAD_DATA = fetch_data(SOUND_LIKE_API_URL, 'rad')
 
+RAD_BOT_CHANNEL = 667002924886523912
+
 # discord stuff
 @client.event
 async def on_ready():
@@ -106,6 +108,7 @@ async def on_message(message):
             for attachment in message.attachments:
                 await attachment.save(f'images/{get_image_count()}_{attachment.filename}') # the file name attachment.filename
             await message.author.send(f"Received imaged, thanks!\nRad Bot currenlty holds {get_image_count()} rad memes.")
+            await client.get_channel(RAD_BOT_CHANNEL).send(f"@{message.author} has just submitted a rad meme")
         except (OSError, IOError) as e:
             await message.author.send(f"Woah something went wrong... Please don't do that again :(.")
             raise Exception("Coudln't process the file(?).") from e
