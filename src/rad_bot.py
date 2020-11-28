@@ -37,6 +37,9 @@ def get_random_word(data):
     random_word = data[random_num]['word']
     return random_word
 
+def get_image_count():
+    return len(os.listdir(IMAGE_PATH))
+
 # globals
 SOUND_LIKE_RADOVAN_DATA = fetch_data(SOUND_LIKE_API_URL, 'radovan')
 SOUND_LIKE_RADO_DATA = fetch_data(SOUND_LIKE_API_URL, 'rado')
@@ -70,11 +73,10 @@ async def on_message(message):
         await message.channel.send("https://github.com/aminbeigi/Rad-Bot") 
 
     if message.content.lower().startswith(PREFIX + "whats new"):
-        await message.channel.send("You can now private message Rad Bot rad memes!") 
+        await message.channel.send("You can now private message Rad Bot rad memes.") 
 
     if message.content.lower().startswith(PREFIX + "how many"):
-        total_images = len(os.listdir(IMAGE_PATH))
-        await message.channel.send(f"Rad Bot currenlty holds {total_images} rad memes!")
+        await message.channel.send(f"Rad Bot currenlty holds {get_image_count()} rad memes!")
 
     if message.content.lower() == (PREFIX + "rad meme"):
         image_lst = os.listdir(IMAGE_PATH)
@@ -102,12 +104,11 @@ async def on_message(message):
     if not message.guild:
         try:
             for attachment in message.attachments:
-                total_images = len(os.listdir(IMAGE_PATH))
-                await attachment.save(f'images/{total_images}_{attachment.filename}') # the file name attachment.filename
-            await message.author.send(f"Received imaged.\nRad Bot currenlty holds {total_images} rad memes!")
+                await attachment.save(f'images/{get_image_count()}_{attachment.filename}') # the file name attachment.filename
+            await message.author.send(f"Received imaged, thanks!\nRad Bot currenlty holds {get_image_count()} rad memes.")
         except (OSError, IOError) as e:
             await message.author.send(f"Woah something went wrong... Please don't do that again :(.")
-            raise Exception("Coudln't process the file.") from e
+            raise Exception("Coudln't process the file(?).") from e
     
     # easter egg
     if 'golf' in message.content.lower():
