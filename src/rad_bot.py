@@ -107,8 +107,10 @@ async def on_message(message):
         try:
             for attachment in message.attachments:
                 await attachment.save(f'images/{get_image_count()}_{attachment.filename}') # the file name attachment.filename
-            await message.author.send(f"Received imaged, thanks!\nRad Bot currenlty holds {get_image_count()} rad memes.")
-            await client.get_channel(RAD_BOT_CHANNEL).send(f"@{message.author} has just submitted a rad meme")
+                await message.author.send(f"Received image, thanks!")
+                user = str(message.author)[:-5]
+                await client.get_channel(RAD_BOT_CHANNEL).send(f"@{user} has submitted a rad meme.")
+                await client.get_channel(RAD_BOT_CHANNEL).send(f"Rad Bot currenlty holds {get_image_count()} rad memes.")
         except (OSError, IOError) as e:
             await message.author.send(f"Woah something went wrong... Please don't do that again :(.")
             raise Exception("Coudln't process the file(?).") from e
@@ -116,6 +118,11 @@ async def on_message(message):
     # easter egg
     if 'golf' in message.content.lower():
         await message.channel.send(":man_golfing: did someone say golf? :man_golfing:")
+    
+    #if message.content.lower() == ("a"):
+    #    user = str(message.author)[:-5]
+    #    print(type(message.author))
+    #    await client.get_channel(RAD_BOT_CHANNEL).send(f"@{user} has submitted a rad meme")
 
 # entry to program
 def main():
