@@ -115,11 +115,6 @@ async def on_message(message):
     # easter egg
     if 'golf' in message.content.lower():
         await message.channel.send(":man_golfing: did someone say golf? :man_golfing:")
-    
-    #if message.content.lower() == ("a"):
-    #    user = str(message.author)[:-5]
-    #    print(type(message.author))
-    #    await client.get_channel(RAD_BOT_CHANNEL).send(f"@{user} has submitted a rad meme")
 
 # entry to program
 def main():
