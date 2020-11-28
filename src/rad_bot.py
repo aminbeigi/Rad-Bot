@@ -20,10 +20,9 @@ RHYME_API_URL = 'https://api.datamuse.com/words?rel_rhy='
 CONFIG = StaticConfigParser()
 PREFIX = CONFIG.get('SERVER', 'Prefix')
 IMAGE_PATH =  'images/'
-
 BROWSER = mechanicalsoup.Browser()
-
 client = discord.Client()
+RAD_BOT_CHANNEL = 667002924886523912
 
 # helper functions
 def fetch_data(api_url, plain_text):
@@ -40,7 +39,7 @@ def get_random_word(data):
 def get_image_count():
     return len(os.listdir(IMAGE_PATH))
 
-# globals
+# globals - save API response in variables
 SOUND_LIKE_RADOVAN_DATA = fetch_data(SOUND_LIKE_API_URL, 'radovan')
 SOUND_LIKE_RADO_DATA = fetch_data(SOUND_LIKE_API_URL, 'rado')
 SOUND_LIKE_RAD_DATA = fetch_data(SOUND_LIKE_API_URL, 'rad')
@@ -48,8 +47,6 @@ SOUND_LIKE_RAD_DATA = fetch_data(SOUND_LIKE_API_URL, 'rad')
 RHYME_WITH_RADOVAN_DATA = fetch_data(SOUND_LIKE_API_URL, 'radovan')
 RHYME_WITH_RADO_DATA = fetch_data(SOUND_LIKE_API_URL, 'rado')
 RHYME_WITH_RAD_DATA = fetch_data(SOUND_LIKE_API_URL, 'rad')
-
-RAD_BOT_CHANNEL = 667002924886523912
 
 # discord stuff
 @client.event
