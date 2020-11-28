@@ -7,10 +7,10 @@ from static_config_parser import StaticConfigParser
 from random import randrange
 from random import choice
 
-"""Easy to use Discord bot.
+"""A multi-purpose Discord bot.
 
-Rad-Bot posts images from inside a directory and interacts with APIs
-to output relevant data.
+Rad-Bot can post images from a directory, read private messages 
+and interact with APIs.
 Requires a token input in config.ini.
 """
 
