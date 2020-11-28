@@ -77,6 +77,7 @@ async def on_message(message):
     if message.content.lower().startswith(PREFIX + "how many"):
         await message.channel.send(f"Rad Bot currenlty holds {get_image_count()} rad memes!")
 
+    # post image
     if message.content.lower() == (PREFIX + "rad meme"):
         image_lst = os.listdir(IMAGE_PATH)
         # raise exception if empty directory OR invalid file format
@@ -99,11 +100,11 @@ async def on_message(message):
     if message.content.lower() == (PREFIX + "rhyme with rad"):
         await message.channel.send(get_random_word(RHYME_WITH_RAD_DATA))
 
-    # await client.process_commands(message)
+    # reading private messages
     if not message.guild:
         try:
             for attachment in message.attachments:
-                await attachment.save(f'images/{get_image_count()}_{attachment.filename}') # the file name attachment.filename
+                await attachment.save(f'images/{get_image_count()}_{attachment.filename}') # the file name is attachment.filename
                 await message.author.send(f"Received image, thanks!")
                 user = str(message.author)[:-5]
                 await client.get_channel(RAD_BOT_CHANNEL).send(f"@{user} has submitted a rad meme.")
