@@ -9,11 +9,12 @@
 <br />
 <p align="center">
 <a href="../../issues"><img src="https://img.shields.io/github/issues/aminbeigi/Rad-Bot.svg?style=flat-square" /></a>
-<a href="../../pulls"><img src="https://img.shields.io/github/issues-pr/aminbeigi/Rad-Bot.svg?style=flat-square" /></a> 
+<a href="../../pulls"><img src="https://img.shields.io/github/issues-pr/aminbeigi/Rad-Bot.svg?style=flat-square" /></a>
+<img src="https://img.shields.io/github/license/aminbeigi/Rad-Bot?style=flat-square">
 </p>
 
 ## Description
-Rad-Bot is a Discord bot that offers many cool features for our community server discord server.
+Rad-Bot is a Discord bot that offers many cool features for our community discord server.
 
 ## Requirements
 * Python 3.8.2+
