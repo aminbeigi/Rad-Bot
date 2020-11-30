@@ -22,7 +22,7 @@ PREFIX = CONFIG.get('SERVER', 'Prefix')
 IMAGE_PATH =  'images/'
 BROWSER = mechanicalsoup.Browser()
 client = discord.Client()
-RAD_BOT_CHANNEL = 667002924886523912
+RAD_BOT_CHANNEL = 782426020464295986
 
 # helper functions
 def fetch_data(api_url, plain_text):
@@ -105,9 +105,8 @@ async def on_message(message):
         try:
             for attachment in message.attachments:
                 await attachment.save(f'images/{get_image_count()}_{attachment.filename}') # the file name is attachment.filename
-                await message.author.send(f"Received image, thanks!")
-                user = str(message.author)[:-5]
-                await client.get_channel(RAD_BOT_CHANNEL).send(f"@{user} has submitted a rad meme.")
+                await message.author.send(f"Got it, thanks!")
+                await client.get_channel(RAD_BOT_CHANNEL).send(f"@{message.author.name} has submitted a rad meme.")
                 await client.get_channel(RAD_BOT_CHANNEL).send(f"Rad Bot currenlty holds {get_image_count()} rad memes.")
         except (OSError, IOError) as e:
             await message.author.send(f"Woah something went wrong... Please don't do that again :(.")
